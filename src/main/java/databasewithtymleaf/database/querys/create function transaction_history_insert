@@ -1,0 +1,9 @@
+create or replace function transaction_history_insert(id1 integer, id2 integer, amount float, vaqt varchar) returns void AS $$
+insert into transaction_history (send_account_id, receive_account_id, amount, vaqt) values (id1, id2, amount,vaqt);
+$$ LANGUAGE sql;
+
+
+
+create or replace function deposit_history_insert(id1 integer, amount float, vaqt varchar) returns void AS $$
+insert into deposit_history (send_account_id, amount, vaqt) values (id1,amount,vaqt);
+$$ LANGUAGE sql;
